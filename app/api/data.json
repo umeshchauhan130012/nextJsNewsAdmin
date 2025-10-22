@@ -1,0 +1,102 @@
+[
+  {
+    "linktype": true,
+    "_id": "67bbfce90f036a165d5434d7",
+    "id": 498510,
+    "name": "About Us",
+    "url": "/about-us",
+    "order": 1,
+    "date": "2025-02-24T05:00:25.111Z",
+    "__v": 0
+  },
+  {
+    "linktype": true,
+    "_id": "67bbfce90f036a165d5434d8",
+    "id": 498511,
+    "name": "Disclaimer",
+    "url": "/disclaimer",
+    "order": 2,
+    "date": "2025-02-24T05:00:25.112Z",
+    "__v": 0
+  },
+  {
+    "linktype": true,
+    "_id": "67bbfce90f036a165d5434d9",
+    "id": 498512,
+    "name": "Advertise with Us",
+    "url": "/advertise-with-us",
+    "order": 3,
+    "date": "2025-02-24T05:00:25.112Z",
+    "__v": 0
+  },
+  {
+    "linktype": true,
+    "_id": "67bbfce90f036a165d5434da",
+    "id": 498513,
+    "name": "Contact Us",
+    "url": "/contact-us",
+    "order": 4,
+    "date": "2025-02-24T05:00:25.113Z",
+    "__v": 0
+  },
+  {
+    "linktype": true,
+    "_id": "67bbfce90f036a165d5434db",
+    "id": 498514,
+    "name": "Editorial Policy",
+    "url": "/editorial-policy",
+    "order": 5,
+    "date": "2025-02-24T05:00:25.114Z",
+    "__v": 0
+  },
+  {
+    "linktype": true,
+    "_id": "67bbfce90f036a165d5434dc",
+    "id": 498515,
+    "name": "Cookies Policy",
+    "url": "/cookies-policy",
+    "order": 6,
+    "date": "2025-02-24T05:00:25.115Z",
+    "__v": 0
+  },
+  {
+    "linktype": true,
+    "_id": "67bbfce90f036a165d5434dd",
+    "id": 498516,
+    "name": "Ethics Policy & Mission",
+    "url": "/ethics-policy-mission",
+    "order": 7,
+    "date": "2025-02-24T05:00:25.117Z",
+    "__v": 0
+  },
+  {
+    "_id": "67bbfce90f036a165d5434de",
+    "id": 498517,
+    "name": "Privacy Policy",
+    "url": "/privacy-policy",
+    "order": 8,
+    "date": "2025-02-24T05:00:25.117Z",
+    "__v": 0,
+    "linktype": true
+  },
+  {
+    "linktype": true,
+    "_id": "67bbfce90f036a165d5434df",
+    "id": 498518,
+    "name": "Terms of Service",
+    "url": "/terms-of-service",
+    "order": 9,
+    "date": "2025-02-24T05:00:25.118Z",
+    "__v": 0
+  },
+  {
+    "_id": "67bbfce90f036a165d5434e0",
+    "id": 498519,
+    "name": "Verification & Fact Checking Policy",
+    "url": "/verification-fact-checking-policy",
+    "order": 10,
+    "date": "2025-02-24T05:00:25.119Z",
+    "__v": 0,
+    "linktype": false
+  }
+]

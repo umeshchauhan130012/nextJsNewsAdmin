@@ -1,0 +1,17 @@
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;}
+@import "tailwindcss";
+body{color: var(--main-color);font-family: "Noto Sans Devanagari", "Noto Sans Devanagari Fallback";font-size: 16px;background: var(--background);line-height:1.42857143;color:var(--primary);font-style: normal;font-weight:400;background-color: var(--white);-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+h1,h2,h3,h4,h5,h6{line-height: 1.4;margin-bottom: 10px;}
+img{vertical-align:middle}
+a:hover{text-decoration:none}
+p {margin: 0 0 10px;}
+@layer base {
+    h1 {@apply text-[36px] sm:text-[40px] md:text-[50px];}
+    h2 {@apply text-[30px] sm:text-[32px] md:text-[35px];}
+    h3 {@apply text-[30px] sm:text-[32px] md:text-[35px];}
+    h4 {@apply text-[24px] sm:text-[28px] md:text-[30px];}
+    h5 {@apply text-[20px] sm:text-[22px] lg:text-[25px];}
+    h6 {@apply text-[18px] sm:text-[19px] md:text-[20px];}
+  }

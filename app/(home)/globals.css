@@ -1,0 +1,132 @@
+/*default css*/
+:root {
+  --primary:#3d3d3d;
+  --light:#F8F2F0;
+  --black:#000;
+  --white:#fff;
+  --whitelight:#f0f0f0;
+  --litewhite:#fafafa;
+  --theme:#c70100;
+  --themebg:#052438;
+  --hover:#b30000;
+  --lightdark:#ccc;
+  --transparent:transparent;
+  --bordercolor:#57646c;
+  --bordersecondry:#eaeaea;
+  --lighttowhite:#f0f0f0;
+  --whitetowhite:#ffffff;
+  --dddtoddd:#dddddd;
+  --themetotheme:#052438;
+  --addtotheme:#fafafa;
+  --graytotheme:#F4F4F4;
+  --redtored:#b30000;
+  --redtodddddd:#b30000;
+  --lightblackwhite:#666666;
+  --livehilight:#fff2f2;
+  --tabbackcolor:#052438;
+  --searchborder:#eaeaea;
+  --searchfocusborder:#052438;
+  }
+  html[data-theme="dark"] {
+  --primary:#e5e5e5;
+  --black:#ddd;
+  --white:#042031;
+  --hover:#fff;
+  --bordersecondry:#0a3b5a;
+  --lighttowhite:#ffffff;
+  --themetotheme:#1b3445;
+  --addtotheme:#07273c;
+  --graytotheme:#07273c;
+  --redtodddddd:#d5d5d5;
+  --lightblackwhite:#dddddd;
+  --livehilight:#1b3445;
+  --tabbackcolor:#1b3445;
+  --searchborder:#bababa;
+  --searchfocusborder:#fefefe;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0;}
+@import "tailwindcss";
+body{color: var(--main-color);font-family: "Noto Sans Devanagari", "Noto Sans Devanagari Fallback";font-size: 16px;background: var(--background);line-height:1.42857143;color:var(--primary);font-style: normal;font-weight:400;background-color: var(--white);-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+h1,h2,h3,h4,h5,h6{line-height: 1.4;}
+img{vertical-align:middle}
+a:hover{text-decoration:none}
+p {margin: 0 0 10px;}
+@layer base {
+    h1 {@apply text-[36px] sm:text-[40px] md:text-[50px];}
+    h2 {@apply text-[30px] sm:text-[32px] md:text-[35px];}
+    h3 {@apply text-[30px] sm:text-[32px] md:text-[35px];}
+    h4 {@apply text-[24px] sm:text-[28px] md:text-[30px];}
+    h5 {@apply text-[20px] sm:text-[22px] lg:text-[25px];}
+    h6 {@apply text-[18px] sm:text-[19px] md:text-[20px];}
+  }
+
+.custom-3d-effect{-webkit-transform:translateY(25%) rotateX(-35deg);transform:translateY(25%) rotateX(-35deg);transition:transform .3s,opacity .3s;-webkit-transition:-webkit-transform .3s,opacity .3s;max-height:100%;overflow-y:auto}
+.custom-3d-play{-webkit-transform:rotateX(0);transform:rotateX(0)}
+.custom-3d-menuactive{position:fixed;top:0;bottom:0;left:0;right:0;background-color:#1e824c;padding:100px 10px 10px;transition:all .5s;opacity:0;visibility:hidden;pointer-events:none;z-index:9}
+.custom-3d-menuactive.custom-3d-menuplay{opacity:1;visibility:visible;pointer-events:all}
+.livebtitle:before {
+    content: "";
+    display: inline-block;
+    background: #c70000;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 #c70000;
+    margin: 0 7px 0 0;
+    height: 7px;
+    width: 7px;
+    min-width: 7px;
+    transform: scale(1);
+    animation: pulse-red 2s infinite;
+    top: 7px;
+    position: relative;
+}
+  @keyframes pulse-red {
+  0% {transform: scale(.95);box-shadow: 0 0 0 0 rgba(216,2,2,.7)}
+  70% {transform: scale(1);box-shadow: 0 0 0 7px rgba(216,2,2,0)}
+  100% {transform: scale(.95);box-shadow: 0 0 0 0 rgba(216,2,2,0)}
+  }
+  .liveblist::-webkit-scrollbar{width:4px;}
+  .liveblist::-webkit-scrollbar-thumb{background-color:var(--bordersecondry);border-radius:10px}
+  .liveblist::-webkit-scrollbar-track{background-color:var(--addtotheme);border-radius:10px}
+  .livebitem:before {
+    content: '';
+    border-left: 2px dotted var(--bordersecondry);
+    position: absolute;
+    top: 3px;
+    left: -11px;
+    width: 1px;
+    height: 100%;
+}
+
+.livebitem:first-child:after {
+    top: 3px;
+}
+
+.livebitem:after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: 12px;
+    left: -14px;
+    border-radius: 10px;
+    background: var(--redtored);
+    box-sizing: border-box;
+}
+.addholder:before {    
+  content: "विज्ञापन";
+    line-height: 16px;
+    color: #7d7d7d;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;}
+
+    .footermenu li:after {
+    content: "|";
+    color: #57646c;
+    position: absolute;
+    right: 0;
+    top: 7px;
+    font-size: 9px;
+}
