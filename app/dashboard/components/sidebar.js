@@ -75,6 +75,86 @@ const MenuItem = [
           ],
     },
     {
+        SubMenu: true,
+        MenuItemName: "Header Menu",
+        MenuItemIcon: faPlus,
+        MenuItemLink: "/",
+        ChildMenu:[
+              {
+                  SubMenu:false,
+                  MenuItemName:"All Menu",
+                  MenuItemLink:"/dashboard/header-menu",
+                  ChildMenuInner:[],
+              },
+              {
+                  SubMenu:false,
+                  MenuItemName:"Add Menu",
+                  MenuItemLink:"/dashboard/add-headermenu",
+                  ChildMenuInner:[],
+              },
+          ],
+    }, 
+        {
+        SubMenu: true,
+        MenuItemName: "Network Menu",
+        MenuItemIcon: faPlus,
+        MenuItemLink: "/",
+        ChildMenu:[
+              {
+                  SubMenu:false,
+                  MenuItemName:"All Network Menu",
+                  MenuItemLink:"/dashboard/network-menu",
+                  ChildMenuInner:[],
+              },
+              {
+                  SubMenu:false,
+                  MenuItemName:"Add Network Menu",
+                  MenuItemLink:"/dashboard/add-networkmenu",
+                  ChildMenuInner:[],
+              },
+          ],
+    }, 
+    {
+        SubMenu: true,
+        MenuItemName: "Footer Menu",
+        MenuItemIcon: faPlus,
+        MenuItemLink: "/",
+        ChildMenu:[
+              {
+                  SubMenu:false,
+                  MenuItemName:"All Menu",
+                  MenuItemLink:"/dashboard/footer-menu",
+                  ChildMenuInner:[],
+              },
+              {
+                  SubMenu:false,
+                  MenuItemName:"Add Menu",
+                  MenuItemLink:"/dashboard/add-footermenu",
+                  ChildMenuInner:[],
+              },
+          ],
+    },
+    {
+        SubMenu: true,
+        MenuItemName: "Footer Category",
+        MenuItemIcon: faPlus,
+        MenuItemLink: "/",
+        ChildMenu:[
+              {
+                  SubMenu:false,
+                  MenuItemName:"All Footer Category",
+                  MenuItemLink:"/dashboard/footer-category",
+                  ChildMenuInner:[],
+              },
+              {
+                  SubMenu:false,
+                  MenuItemName:"Add Footer Category",
+                  MenuItemLink:"/dashboard/add-footercategory",
+                  ChildMenuInner:[],
+              },
+          ],
+    },
+    {
         SubMenu: false,
         MenuItemName: "Website Settings",
         MenuItemIcon: faCog,

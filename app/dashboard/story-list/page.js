@@ -16,7 +16,6 @@ const StoryList = () => {
   const [showPopup, setShowPopup] = useState(false); 
   const [selectedRow, setSelectedRow] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [dataRefresh, setDataRefresh] = useState(false);
   const [data, setData] = useState([]);
   const [toast, setToast] = useState({ message: '', type: '', visible: false });
 
@@ -106,17 +105,17 @@ const StoryList = () => {
   };
 
   useEffect(() => {
-    if (!hasFetched.current || dataRefresh) {
+    if (!hasFetched.current) {
       fetchStory();
     }
-  }, [dataRefresh]);
+  }, []);
 
     const deleteApiCall = async (id) => {
         setLoading(true);
         try {
             await deleteStory(`/story/${id}`); 
+            await fetchStory();
             setToast({ message: 'Story deleted successfully done!', type: 'success', visible: true });
-            setDataRefresh(prev => !prev);
         } catch (err) {
              const errorMessage = err.response?.data?.error || err.message || "Something went wrong";
              setToast({ message: errorMessage, type: 'error', visible: true });

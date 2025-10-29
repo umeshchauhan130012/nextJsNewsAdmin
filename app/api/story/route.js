@@ -1,10 +1,7 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/app/lib/db";
 import Story from "@/app/lib/models/story";
-import path from "path";
-import { v4 as uuidv4 } from "uuid";
 import { protect } from "@/app/middleware/authMiddleware";
-import { writeFile, mkdir } from "fs/promises";
 import streamifier from "streamifier";
 const cloudinary = require("../../middleware/cloudinary.js");
 
@@ -67,11 +64,11 @@ export async function POST(req) {
     const bufferFirst = Buffer.from(await filefirst.arrayBuffer());
 
     // Optional: save to public/uploads
-    const uploadDir = path.join(process.cwd(), "public/uploads");
-    await mkdir(uploadDir, { recursive: true });
-    const fileFirstName = `${uuidv4()}-${filefirst.name}`;
-    const fileFirstPath = path.join(uploadDir, fileFirstName);
-    await writeFile(fileFirstPath, bufferFirst);
+    // const uploadDir = path.join(process.cwd(), "public/uploads");
+    // await mkdir(uploadDir, { recursive: true });
+    // const fileFirstName = `${uuidv4()}-${filefirst.name}`;
+    // const fileFirstPath = path.join(uploadDir, fileFirstName);
+    // await writeFile(fileFirstPath, bufferFirst);
 
     // Upload to Cloudinary
     const cloudResult = await uploadToCloudinary(bufferFirst);

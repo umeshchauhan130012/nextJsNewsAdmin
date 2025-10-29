@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/app/lib/db";
-import path from "path";
-import { v4 as uuidv4 } from "uuid";
 import { protect } from "@/app/middleware/authMiddleware";
-import { writeFile, mkdir } from "fs/promises";
 import streamifier from "streamifier";
 import FooterLogo from "@/app/lib/models/footerlogo.js";
 const cloudinary = require("../../../middleware/cloudinary.js");
@@ -63,11 +60,11 @@ export async function PUT(req, context) {
     if (filefirst && filefirst.size > 0) {
       const bufferFirst = Buffer.from(await filefirst.arrayBuffer());
       // Optional: save locally
-      const uploadDir = path.join(process.cwd(), "public/uploads");
-      await mkdir(uploadDir, { recursive: true });
-      const fileFirstName = `${uuidv4()}-${filefirst.name}`;
-      const fileFirstPath = path.join(uploadDir, fileFirstName);
-      await writeFile(fileFirstPath, bufferFirst);
+      // const uploadDir = path.join(process.cwd(), "public/uploads");
+      // await mkdir(uploadDir, { recursive: true });
+      // const fileFirstName = `${uuidv4()}-${filefirst.name}`;
+      // const fileFirstPath = path.join(uploadDir, fileFirstName);
+      // await writeFile(fileFirstPath, bufferFirst);
       // Upload to Cloudinary
       const cloudResult = await uploadToCloudinary(bufferFirst);
       // Update story file info

@@ -68,7 +68,7 @@ export default function Header() {
                                 <button className="flex items-center bg-transparent border-none text-[#1f2f3e] cursor-pointer min-h-[40px] outline-none px-[15px] text-left w-full">
                                     <Image src="/user.webp" alt="user" height="50" width="50" className="rounded-full h-auto max-w-[40px]" />
                                     <span className="inline-block relative cursor-pointer pl-[10px]">
-                                        <label className="block text-[#1f2f3e] cursor-pointer text-[13px] font-semibold tracking-[0.3px]">Umesh Chauhan</label>
+                                        <span className="block text-[#1f2f3e] cursor-pointer text-[13px] font-semibold tracking-[0.3px]">Umesh Chauhan</span>
                                         <em className="block text-[#afafaf] text-[10px] font-semibold not-italic tracking-[0.6px]">cumesh5432@gmail.com</em>
                                     </span>
                                 </button>

@@ -7,7 +7,7 @@ import Toast from '../components/toast';
 import Div from '../components/division';
 import { deleteTags, getTags } from '@/app/services/authService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faSpinner, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from "next/navigation";
 
 const TagList = () => {
@@ -16,7 +16,6 @@ const TagList = () => {
   const [showPopup, setShowPopup] = useState(false); 
   const [selectedRow, setSelectedRow] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [dataRefresh, setDataRefresh] = useState(false);
   const [data, setData] = useState([]);
   const [toast, setToast] = useState({ message: '', type: '', visible: false });
   const [error, setError] = useState(null);
@@ -25,7 +24,6 @@ const TagList = () => {
     const confirmDelete = () => {
       if (!selectedRow) return;
     deleteApiCall(selectedRow);
-    setShowPopup(false); 
     setSelectedRow(null); 
     };
 
@@ -108,18 +106,17 @@ const TagList = () => {
   };
 
   useEffect(() => {
-    if (!hasFetched.current || dataRefresh) {
+    if (!hasFetched.current) {
       fetchTags();
     }
-  }, [dataRefresh]);
+  }, []);
 
     const deleteApiCall = async (id) => {
         setLoading(true);
         try {
-            console.log("Deleting tag:", id);
             await deleteTags(`/tags/${id}`); 
+            await fetchTags();
             setToast({ message: 'Tag deleted successfully done!', type: 'success', visible: true });
-            setDataRefresh(prev => !prev);
         } catch (err) {
             setError(err.response?.data?.error || err.error); 
         } finally {
@@ -156,7 +153,7 @@ const TagList = () => {
                     {showPopup && (
                         <Div style={popupStyle}>
                         <p className='text-[19px]'>Are you sure you want to delete?</p>
-                        <button className='bg-[#11a211] mr-1.5 rounded-[3px] text-white cursor-pointer outline-none px-4 py-1' onClick={confirmDelete} disabled={loading}>Yes</button>
+                        <button className='bg-[#11a211] mr-1.5 rounded-[3px] text-white cursor-pointer outline-none px-4 py-1' onClick={confirmDelete} disabled={loading}>{loading ? <FontAwesomeIcon icon={faSpinner} spin /> : "Yes"}</button>
                         <button className='bg-[#f90707] rounded-[3px] text-white cursor-pointer outline-none px-4 py-1' onClick={cancelDelete} disabled={loading}>No</button>
                         </Div>
                     )}

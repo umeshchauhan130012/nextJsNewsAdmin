@@ -7,6 +7,10 @@ const footerLogoSchema = new mongoose.Schema({
     title: {
         type: String,
     },
+    isActive: {
+         type: Boolean, 
+         default: false
+    },
     filefirst: {
         filename: String,
         path: String,

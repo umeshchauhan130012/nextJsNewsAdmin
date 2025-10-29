@@ -16,7 +16,6 @@ const CategoryList = () => {
   const [showPopup, setShowPopup] = useState(false); 
   const [selectedRow, setSelectedRow] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [dataRefresh, setDataRefresh] = useState(false);
   const [data, setData] = useState([]);
   const [toast, setToast] = useState({ message: '', type: '', visible: false });
   const [error, setError] = useState(null);
@@ -107,18 +106,17 @@ const CategoryList = () => {
   };
 
   useEffect(() => {
-    if (!hasFetched.current || dataRefresh) {
+    if (!hasFetched.current) {
       fetchCategory();
     }
-  }, [dataRefresh]);
+  }, []);
 
     const deleteApiCall = async (id) => {
         setLoading(true);
         try {
-            console.log("Deleting tag:", id);
             await deleteCategory(`/category/${id}`); 
+            await fetchCategory();
             setToast({ message: 'Tag deleted successfully done!', type: 'success', visible: true });
-            setDataRefresh(prev => !prev);
         } catch (err) {
             setError(err.response?.data?.error || err.error); 
         } finally {
